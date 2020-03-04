@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TheMovie</string>
+    <string name="action_settings">Settings</string>
+    <string name="API_KEY">1e924ebb18bb8856e9245213d420cbcb</string>
+
+    <string name="movies">Filmes</string>
+    <string name="search_hint">What are you looking for?</string>
+    <string name="search">Buscar</string>
+
+</resources>
