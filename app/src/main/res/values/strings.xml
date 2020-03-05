@@ -6,5 +6,6 @@
     <string name="movies">Filmes</string>
     <string name="search_hint">What are you looking for?</string>
     <string name="search">Buscar</string>
-
+    <string name="message_search_movie">Procure o filme que desejar!</string>
+    <string name="message_no_movie">Nehum filme encontrado.</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.marioguerra.themovie.view
+package com.marioguerra.themovie.view.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

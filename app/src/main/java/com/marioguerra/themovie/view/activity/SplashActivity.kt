@@ -1,4 +1,4 @@
-package com.marioguerra.themovie.view
+package com.marioguerra.themovie.view.activity
 
 import android.os.Bundle
 import android.view.View
@@ -48,5 +48,5 @@ class SplashActivity : AppCompatActivity() {
         .map { openDashboard() }
         .subscribe()
 
-    private fun openDashboard() = startActivityWithFinish(DashboardActivity.intent(this))
+    private fun openDashboard() = startActivityWithFinish(MainActivity.intent(this))
 }

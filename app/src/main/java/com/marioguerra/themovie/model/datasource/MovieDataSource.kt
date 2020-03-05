@@ -12,8 +12,10 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class MovieDataSource (
-    val application: Application, val movieDataService : MovieDataService
+    val application: Application,
+    private val movieDataService : MovieDataService
 ) : PageKeyedDataSource<Long, Movie>() {
+
     override fun loadInitial(
         params: LoadInitialParams<Long>,
         callback: LoadInitialCallback<Long, Movie>

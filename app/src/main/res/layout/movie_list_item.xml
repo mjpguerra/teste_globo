@@ -20,9 +20,9 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:elevation="3dp"
-            card_view:cardBackgroundColor="@color/colorPrimary"
-            card_view:cardCornerRadius="1dp">
+            android:elevation="9dp"
+            card_view:cardBackgroundColor="@color/semiWhite"
+            card_view:cardCornerRadius="8dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -44,6 +44,7 @@
                     android:paddingLeft="10dp"
                     android:paddingTop="10dp"
                     android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
                     android:text="@{movie.title}"
                     android:textColor="@color/cardview_light_background"
                     android:textSize="15dp" />

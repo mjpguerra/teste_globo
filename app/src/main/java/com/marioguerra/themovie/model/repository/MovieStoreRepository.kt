@@ -6,9 +6,11 @@ import com.marioguerra.themovie.R
 import com.marioguerra.themovie.model.ListResponse
 import com.marioguerra.themovie.model.Movie
 import com.marioguerra.themovie.model.MovieResponseDB
+import com.marioguerra.themovie.model.Results
 import com.marioguerra.themovie.service.MovieDataService
 import com.marioguerra.themovie.util.extension.schedule
 import com.marioguerra.themovie.util.provider.SchedulerProvider
+import io.reactivex.Observable
 import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,24 +23,9 @@ class MovieStoreRepository @Inject constructor(val application: Application, val
     private var searchMovieLiveData: MutableLiveData<ListResponse<Movie>> = MutableLiveData()
     private var mutableLiveData: MutableLiveData<List<Movie>> = MutableLiveData()
 
-    fun searchMovie(phrase: String, page: Int): MutableLiveData<ListResponse<Movie>> {
-        movieDataService.searchMovie(application.applicationContext.getString(R.string.API_KEY),
-            phrase, page)
-            .enqueue(object : Callback<ListResponse<Movie>> {
-                override fun onResponse(
-                    call: Call<ListResponse<Movie>>,
-                    response: Response<ListResponse<Movie>>
-                ) {
-                    searchMovieLiveData.value = response.body()
-                }
-
-                override fun onFailure(call: Call<ListResponse<Movie>>, t: Throwable) {
-
-                }
-            })
-        return searchMovieLiveData
+    fun searchMovie(phrase: String): Observable<Results> {
+        return movieDataService.searchMovie(application.applicationContext.getString(R.string.API_KEY), phrase)
     }
-
 
     fun getMutableLiveData(): MutableLiveData<List<Movie>> {
         movieDataService

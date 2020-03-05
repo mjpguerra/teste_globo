@@ -1,4 +1,4 @@
-package com.marioguerra.themovie.view
+package com.marioguerra.themovie.view.activity
 
 import android.content.Context
 import android.content.Intent
@@ -7,12 +7,13 @@ import com.marioguerra.themovie.R
 import com.marioguerra.themovie.common.BaseActivity
 import com.marioguerra.themovie.databinding.ActivityDashboardBinding
 import com.marioguerra.themovie.util.databinding.contentView
+import com.marioguerra.themovie.view.MainTab
 import com.marioguerra.themovie.view.adapter.DashboardPagerAdapter
 import kotlinx.android.synthetic.main.activity_dashboard.*
 
-class DashboardActivity : BaseActivity()  {
+class MainActivity : BaseActivity()  {
 
-    private val binding by contentView<DashboardActivity, ActivityDashboardBinding>(R.layout.activity_dashboard)
+    private val binding by contentView<MainActivity, ActivityDashboardBinding>(R.layout.activity_dashboard)
 
     private val adapter = DashboardPagerAdapter(supportFragmentManager)
 
@@ -35,7 +36,7 @@ class DashboardActivity : BaseActivity()  {
 
     private fun setupBottomNavigationView() {
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
-            DashboardTab.forMenuItemId(it.itemId).let { tab ->
+            MainTab.forMenuItemId(it.itemId).let { tab ->
                 binding.viewPager.setCurrentItem(tab.position, true)
                 true
             }
@@ -43,6 +44,6 @@ class DashboardActivity : BaseActivity()  {
     }
 
     companion object {
-        fun intent(context: Context) = Intent(context, DashboardActivity::class.java).apply { flags = Intent.FLAG_ACTIVITY_SINGLE_TOP }
+        fun intent(context: Context) = Intent(context, MainActivity::class.java).apply { flags = Intent.FLAG_ACTIVITY_SINGLE_TOP }
     }
 }

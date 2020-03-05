@@ -1,4 +1,4 @@
-package com.marioguerra.themovie.view
+package com.marioguerra.themovie.view.fragment
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -17,14 +17,17 @@ import com.marioguerra.themovie.databinding.ActivityMainBinding
 import com.marioguerra.themovie.model.Movie
 import com.marioguerra.themovie.util.MOVIE_KEY_INTENT
 import com.marioguerra.themovie.util.databinding.inflate
+import com.marioguerra.themovie.view.activity.MainActivity
+import com.marioguerra.themovie.view.activity.MovieActivity
 import com.marioguerra.themovie.view.adapter.MovieAdapter
 import com.marioguerra.themovie.viewmodel.MainActivityViewModel
 import com.marioguerra.themovie.viewmodel.MainActivityViewModelFactory
+import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class MainActivity : BaseFragment<DashboardActivity>(), MovieAdapter.ClickListener  {
+class MovieFragment : BaseFragment<MainActivity>(), MovieAdapter.ClickListener  {
 
-    private val binding by inflate<MainActivity, ActivityMainBinding>(R.layout.activity_main)
+    private val binding by inflate<MovieFragment, ActivityMainBinding>(R.layout.activity_main)
 
     private lateinit var rvMovie: RecyclerView
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
@@ -49,6 +52,8 @@ class MainActivity : BaseFragment<DashboardActivity>(), MovieAdapter.ClickListen
 
         rvMovie = binding.rvMovies
         swipeRefreshLayout = binding.swipeLayout
+
+        searchView.visibility = View.GONE
 
         initSwipeRefreshLayout()
         initRecyclerView()

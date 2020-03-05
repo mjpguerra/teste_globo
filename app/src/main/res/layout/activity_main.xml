@@ -14,10 +14,30 @@
             android:background="@color/colorPrimary"
             tools:showIn="@layout/activity_main">
 
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="top"
+                android:foregroundGravity="top"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:searchHintIcon="@color/white"
+                android:background="@color/semiWhite"
+                android:tooltipText="Search for Movies..."
+                android:queryHint="Buscar filmes..."
+                android:submitBackground="@color/colorPrimary"
+                android:nestedScrollingEnabled="true"
+                android:hapticFeedbackEnabled="true"
+                android:soundEffectsEnabled="false"
+                android:id="@+id/searchView"/>
+
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvMovies"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:clipToPadding="false"
+                android:layout_below="@id/searchView"
                 android:scrollbars="vertical" />
         </RelativeLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

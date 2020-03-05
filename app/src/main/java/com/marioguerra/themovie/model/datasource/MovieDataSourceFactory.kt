@@ -9,8 +9,11 @@ import javax.inject.Inject
 
 
 class MovieDataSourceFactory @Inject constructor(
-    val application: Application, val movieDataService : MovieDataService
+    val application: Application, private val
+    movieDataService : MovieDataService
 ) : DataSource.Factory<Long, Movie>() {
+
+
     private lateinit var movieDataSource: MovieDataSource
 
     private var mutableLiveData: MutableLiveData<MovieDataSource> = MutableLiveData()
