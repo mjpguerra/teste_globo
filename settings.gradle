@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='TMDBClientKotlin'
+rootProject.name='TheVideoMG'

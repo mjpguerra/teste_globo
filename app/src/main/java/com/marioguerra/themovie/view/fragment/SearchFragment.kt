@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.marioguerra.themovie.R
 import com.marioguerra.themovie.common.BaseFragment
-import com.marioguerra.themovie.databinding.ActivityMainBinding
+import com.marioguerra.themovie.databinding.FragmentSearchBinding
 import com.marioguerra.themovie.model.Movie
 import com.marioguerra.themovie.model.Results
 import com.marioguerra.themovie.util.databinding.inflate
@@ -22,7 +22,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.rvMovies
 import kotlinx.android.synthetic.main.activity_main.searchView
 import kotlinx.android.synthetic.main.fragment_search.*
@@ -32,7 +31,7 @@ import javax.inject.Inject
 
 class SearchFragment : BaseFragment<MainActivity>() {
 
-    private val binding by inflate<SearchFragment, ActivityMainBinding>(R.layout.fragment_search)
+    private val binding by inflate<SearchFragment, FragmentSearchBinding>(R.layout.fragment_search)
     @Inject
     lateinit var factory: MainActivityViewModelFactory
     private val viewModel: MainActivityViewModel by injectActivityVIewModels()
